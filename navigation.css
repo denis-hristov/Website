@@ -1,0 +1,136 @@
+.nav-body {
+    padding: 2em;
+    font: 14px/1.5 Lato, sans-serif;
+}
+.site {
+    background: #fff;
+    max-width: 1100px;
+    margin: 0 auto;
+    border-radius: 0.3em;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.1);
+    padding: 2em;
+}
+.site > header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.site > header h1 a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    padding-left: 1rem;
+}
+.main-nav ul {
+    list-style: none;
+}
+.main-nav a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    background: #eee;
+    padding: 1em 1.5em;
+}
+#nav-toggle {
+    display: none;
+}
+
+@media (max-width: 799px) {
+    .site{
+        padding-bottom: 2.63em;
+    }
+    .site h1{
+        margin-top: 0.4em;
+    }
+    .menu-button {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: #EEE;
+        padding: 1em 1.5em;
+        cursor: pointer;
+    }
+    .main-nav {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: #fff;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 999;
+    }
+    .main-nav ul {
+        text-align: center;
+        padding: 0;
+    }
+    .main-nav li {
+        margin-bottom: 1em;
+    }
+    .main-nav li:hover > ul {
+        display: block;
+        box-shadow: 0 0 1em 0.1em rgba(0, 0, 0, 0.1);
+    }
+    .main-nav a:hover {
+        transform: scale(1.2);
+        transition: transform 0.3s ease;
+        background: rgb(49, 173, 0);
+        color: #fff;
+    }
+    .close{
+        box-shadow: 0 0 0.1em 0.2em rgb(227, 41, 41);
+    }
+    .close a:hover{
+        background: rgb(227, 41, 41);
+    }
+    #nav-toggle:checked ~ .site .main-nav {
+        display: flex;
+    }
+    #nav-toggle:checked ~ .site label.menu-button .open {
+        display: none;
+    }
+    #nav-toggle:checked ~ .site label.menu-button .close {
+        display: block;
+    }
+}
+
+
+@media (min-width: 799px) {
+    .menu-button {
+        display: none;
+    }
+    .close{
+        display: none;
+    }
+    .main-nav ul {
+        display: flex;
+        gap: 1em;
+    }
+    .main-nav ul li {
+        position: relative;
+    }
+    .main-nav ul ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 10rem;
+        background: #eee;
+    }
+    .main-nav ul ul ul {
+        top: 0;
+        left: 100%;
+    }
+    .main-nav li:hover > ul {
+        display: block;
+        box-shadow: 0 0 1em 0.1em rgba(0, 0, 0, 0.1);
+    }
+    .main-nav a:hover {
+        transform: scale(1.2);
+        transition: transform 0.3s ease;
+        background: rgb(49, 173, 0);
+        color: #fff;
+    }
+}
