@@ -180,9 +180,25 @@
 
 
 /* Blog */
+.blog {
+    padding: 2em;
+    background-color: #f4f4f4;
+    border-radius: 0.5em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 .blog h2 {
     font-size: 2em;
     margin-bottom: 1.5em;
     text-align: center;
     color: #333;
+}
+
+.blog p {
+    background-color: #fff;
+    padding: 1em;
+    margin-bottom: 0.5em;
+    border: 2px solid #ddd;
+    border-radius: 0.5em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
