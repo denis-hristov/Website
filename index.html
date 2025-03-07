@@ -1,62 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index</title>
-    <link rel="stylesheet" href="global.css">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Website</title>
+    <link rel="stylesheet" href="styles/global.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-</head>
-<body>
-    <nav class="nav-body">
-        <input type="checkbox" id="nav-toggle">
-        <div class="site">
-            <header>
-                <h1><a href="index.html">Denis's Page</a></h1>
-            
-                <label for="nav-toggle" class="menu-button">
-                    <span class="open">☰ Menu</span>
-                </label>
-                
-                <nav class="main-nav">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contacts.html">Contacts</a></li>
-                        <li class="close"><a href="index.html">✖</a></li>
-                    </ul>
-                </nav>
-            </header>
-        </div>
-    </nav>
-    
-    <main class="home">
-        <article>
-            <div class="inner">
-                <section class="content">
-                    <i class="fa-solid fa-quote-left"></i>
-                    <p class="desc">Don't wait for the perfect moment. Create it! Every day is a new opportunity to become the best version of yourself. Small steps lead to big achievements. Start today!</p>
-                    <p class="author">Denis Hristov</p>
-                </section>
-                <figure class="media">
-                    <img src="https://yt3.googleusercontent.com/ytc/AIdro_lUbV7EyavS2KvZc9tMzFGruk8OnsV4kUeMKCdB8fhRtL0=s900-c-k-c0x00ffffff-no-rj">
-                </figure>
-            </div>
-        </article>
-    </main>
-
-    <footer>
-        <p>© 2025 - Denis's personal page.</p>
-        <ul>
-            <li><a href="https://www.instagram.com/denis_hristov/"><i class="fa-brands fa-instagram"></i></a></li>
-            <li><a href="https://www.threads.net/@denis_hristov/"><i class="fa-brands fa-threads"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/denis-hristov-profile/"><i class="fa-brands fa-linkedin-in"></i></a></li>
-            <li><a href="https://www.youtube.com/@denis_hristov"><i class="fa-brands fa-youtube"></i></a></li>
-            <li><a href="https://x.com/denis_hristov45?s=21"><i class="fa-brands fa-x-twitter"></i></a></li>
-            <li><a href="https://github.com/denis-hristov"><i class="fa-brands fa-github"></i></a></li>
-        </ul>
-    </footer>
-
-</body>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
