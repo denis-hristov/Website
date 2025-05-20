@@ -1,51 +1,50 @@
-import{Link}from 'react-router'
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from 'react-router-dom';
+import { useState } from 'react';
 
-export default function Navigation(){
-    const navigation=[
-        {name:'Home', path:'/'},
-        {name:'QuoteGenerator', path:'/quoteGenerator'},
-        {name:'Blog', path:'/blog'},
-        {name:'About', path:'/about'},
-        {name:'Contacts', path:'/contacts'},
-    ]
+export default function Navigation() {
+    const navigation = [
+        { name: 'Home', path: '/' },
+        { name: 'QuoteGenerator', path: '/quoteGenerator' },
+        { name: 'About', path: '/about' },
+        { name: 'Contacts', path: '/contacts' },
+    ];
 
     const pageTitles = {
-        "/": "Denis's Page",
-        "/quoteGenerator": "Denis's Quote",
-        "/blog": "Denis's Blog",
-        "/about": "About Denis",
-        "/contacts": "Contact Denis",
+        '/': "Denis's Page",
+        '/quoteGenerator': "Denis's Quote",
+        '/about': "About Denis",
+        '/contacts': "Contact Denis",
     };
 
     const location = useLocation();
-
     const currentTitle = pageTitles[location.pathname] || "Denis's Page";
-    
 
-    return(
-        <>
-            <nav className="nav-body">
-                <input type="checkbox" id="nav-toggle"/>
-                <div className="site">
-                    <header>
-                        <h1><Link to="index.html">{currentTitle}</Link></h1>
+    const [menuOpen, setMenuOpen] = useState(false);
 
-                        <label for="nav-toggle" className="menu-button">
-                            <span className="open">☰ Menu</span>
-                        </label>
+    const toggleMenu = () => setMenuOpen(!menuOpen);
+    const closeMenu = () => setMenuOpen(false);
 
-                        <nav className="main-nav">
-                            <ul>
-                                {navigation.map((item)=>(
-                                    <li><Link key={item.name} to={item.path}>{item.name}</Link></li>
-                                ))}
-                                <li className="close"><Link to="index.html">✖</Link></li>
-                            </ul>
-                        </nav>
-                    </header>
-                </div>
-            </nav>
-        </>
-    )
+    return (
+        <nav className="nav-body">
+            <div className="site">
+                <header>
+                    <h1><Link to="/">{currentTitle}</Link></h1>
+
+                    <button className="menu-button" onClick={toggleMenu}>
+                        {menuOpen ? '✖ Close' : '☰ Menu'}
+                    </button>
+
+                    <nav className={`main-nav ${menuOpen ? 'open' : ''}`}>
+                        <ul>
+                            {navigation.map((item) => (
+                                <li key={item.name}>
+                                    <Link to={item.path} onClick={closeMenu}>{item.name}</Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </nav>
+                </header>
+            </div>
+        </nav>
+    );
 }

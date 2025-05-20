@@ -10,7 +10,7 @@ export default function Home() {
                         <p className="author">Denis Hristov</p>
                     </section>
                     <figure className="media">
-                        <img src="https://yt3.googleusercontent.com/ytc/AIdro_lUbV7EyavS2KvZc9tMzFGruk8OnsV4kUeMKCdB8fhRtL0=s900-c-k-c0x00ffffff-no-rj" />
+                        <img src="resurses/ProfilPhoto.jpg" />
                     </figure>
                 </div>
             </article>
