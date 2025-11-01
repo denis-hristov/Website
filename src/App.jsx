@@ -1,26 +1,34 @@
-import { Routes, Route } from "react-router";
+import ScrollProgressBar from "./ui/ScrollProgressBar";
+import Nav from "./ui/Nav";
+import Footer from "./ui/Footer";
 
-import Home from "./Components/Home";
-import About from "./Components/About";
-import Contacts from "./Components/Contacts";
-import QuoteGenerator from "./Components/QuoteSection";
 
-import Footer from "./Parts/Footer";
-import Navigation from "./Parts/Navigation";
+import Hero from "./sections/Hero";
+import Features from "./sections/Features";
+import StickyShowcase from "./sections/StickyShowcase";
+import Metrics from "./sections/Metrics";
+import Gallery from "./sections/Gallery";
+import ContactCTA from "./sections/ContactCTA";
+import ABOUT from "./sections/About";
+import QUOTE from "./sections/QuoteSection";
 
-function App() {
-    
-    return(<>
-        <Navigation/>
-    
-        <Routes>
-            <Route path="/" element={<Home />}/>
-            <Route path="/quoteGenerator" element={<QuoteGenerator />}/>
-            <Route path="/about" element={<About />}/>
-            <Route path="/contacts" element={<Contacts />}/>
-        </Routes> 
-                         
-        <Footer/>
-    </>);
+
+export default function App() {
+	return (
+		<div className="relative text-neutral-900 dark:text-neutral-100 bg-white dark:bg-neutral-950 selection:bg-indigo-200/60 dark:selection:bg-indigo-700/30">
+			<ScrollProgressBar />
+			<Nav />
+			<main>
+				<Hero />
+				<ABOUT />
+				<Features />
+				<QUOTE />
+				<StickyShowcase />
+				<Metrics />
+				<Gallery />
+				<ContactCTA />
+			</main>
+			<Footer />
+		</div>
+	);
 }
-export default App;

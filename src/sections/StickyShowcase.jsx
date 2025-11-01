@@ -1,0 +1,67 @@
+import { motion, useScroll, useTransform, useMotionTemplate } from "framer-motion";
+import { useRef } from "react";
+import Section from "../ui/Section";
+
+export default function StickyShowcase() {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start center", "end end"] });
+
+  const rotate = useTransform(scrollYProgress, [0, 1], [0, 18]);
+  const scale  = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
+  const glow   = useTransform(scrollYProgress, [0, 1], [0.1, 0.35]);
+
+  // Вместо glow.to(...) използваме useMotionTemplate:
+  const filter = useMotionTemplate`saturate(1.05) contrast(1.02) drop-shadow(0 20px 40px rgba(0,0,0,${glow}))`;
+
+  const steps = [
+    { k: 0, title: "Focus on what matters", desc: "Pin the visual on the right; let copy on the left guide the narrative as you scroll." },
+    { k: 1, title: "Motion that informs",   desc: "Subtle rotation & scaling provide continuity between sections." },
+    { k: 2, title: "Crafted details",       desc: "Blurs, depth, and layered gradients make it feel tactile and alive." }
+  ];
+
+  return (
+    <Section id="showcase">
+      <div ref={containerRef} className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="relative">
+          <div className="sticky top-28">
+            {steps.map((s, i) => (
+              <motion.div
+                key={s.k}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.6 }}
+                transition={{ delay: i * 0.1 }}
+                className="mb-16"
+              >
+                <div className="text-sm uppercase tracking-widest text-neutral-500 dark:text-neutral-400">Step {i + 1}</div>
+                <h3 className="mt-2 text-2xl font-semibold">{s.title}</h3>
+                <p className="mt-2 text-neutral-600 dark:text-neutral-300 max-w-prose">{s.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        <div className="relative">
+          <div className="sticky top-24">
+            <motion.div
+              style={{ rotate, scale }}
+              className="relative aspect-[10/16] rounded-[2.2rem] overflow-hidden border border-black/10 dark:border-white/10 shadow-[0_40px_120px_rgba(0,0,0,0.25)]"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-indigo-100 via-white to-emerald-50 dark:from-indigo-950 dark:via-neutral-900 dark:to-emerald-950" />
+              <motion.img
+                src="/resurses/ProfilPhoto.jpg"
+                alt="Pinned visual"
+                className="absolute inset-0 h-full w-full object-cover object-center"
+                style={{ filter }}
+              />
+              <div className="absolute left-4 bottom-4 right-4 flex items-center justify-between text-xs">
+                <div className="rounded-full bg-white/70 dark:bg-black/40 backdrop-blur px-3 py-1 font-medium">Scroll-linked</div>
+                <div className="rounded-full bg-white/70 dark:bg-black/40 backdrop-blur px-3 py-1 font-medium">Sticky media</div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </Section>
+  );
+}
