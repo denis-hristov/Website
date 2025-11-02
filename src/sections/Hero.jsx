@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { color, motion } from "framer-motion";
 import AnimateIn from "../ui/AnimateIn";
 export default function Hero() {
   return (
@@ -10,7 +10,7 @@ export default function Hero() {
           <div className="flex flex-col gap-4">
             <span className="text-sm uppercase tracking-widest text-indigo-500">Welcome</span>
             <h1 className="text-4xl md:text-5xl font-extrabold text-[var(--c-text)]">
-              Don't wait for the perfect moment. <span className="text-indigo-500">Make it.</span>
+              <u style={{ color: 'red' }}>Work in progress!</u> Don't wait for the perfect moment. <span className="text-indigo-500">Make it.</span>
             </h1>
             <p className="text-lg text-neutral-600 dark:text-neutral-300">Denis Hristov</p>
           </div>

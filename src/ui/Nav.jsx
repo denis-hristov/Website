@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { scrollToId } from "./scrollTo";
 
 const navLinks = [
   { href: "#home",     label: "Home" },
@@ -9,14 +10,6 @@ const navLinks = [
   { href: "#quote",    label: "Quotes" },
   { href: "#contacts", label: "Contacts" },
 ];
-
-function scrollToId(hashOrId) {
-  const id = hashOrId.replace(/^#/, "");
-  const el = document.getElementById(id);
-  if (!el) return;
-  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
-}
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -54,12 +47,7 @@ export default function Nav() {
 
       <AnimatePresence>
         {open && (
-          <motion.nav
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            className="md:hidden overflow-hidden"
-          >
+          <nav className="md:hidden overflow-hidden">
             {navLinks.map((l) => (
               <a
                 key={l.href}
@@ -70,7 +58,7 @@ export default function Nav() {
                 {l.label}
               </a>
             ))}
-          </motion.nav>
+          </nav>
         )}
       </AnimatePresence>
     </motion.header>

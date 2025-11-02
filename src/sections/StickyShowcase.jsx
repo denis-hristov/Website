@@ -11,7 +11,6 @@ export default function StickyShowcase() {
 	const scale = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
 	const glow = useTransform(scrollYProgress, [0, 1], [0.1, 0.35]);
 
-	// Вместо glow.to(...) използваме useMotionTemplate:
 	const filter = useMotionTemplate`saturate(1.05) contrast(1.02) drop-shadow(0 20px 40px rgba(0,0,0,${glow}))`;
 
 	const steps = [
