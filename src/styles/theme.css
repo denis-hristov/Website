@@ -1,0 +1,27 @@
+:root {
+  --c-bg: #ffffff;
+  --c-text: #111827;
+  --c-primary: #6366f1;      /* indigo */
+  --c-accent: #10b981;       /* emerald */
+  --c-glow: rgba(99,102,241,.45);
+  --c-surface: rgba(255,255,255,.55);
+  --radius: 1.25rem;
+  --shadow: 0 8px 32px rgba(0,0,0,.05);
+  --transition: .35s cubic-bezier(.35,0,.2,1);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --c-bg: #0b0f19;
+    --c-text: #f3f4f6;
+    --c-surface: rgba(255,255,255,.07);
+    --shadow: 0 8px 32px rgba(0,0,0,.35);
+  }
+}
+.glass {
+  background: var(--c-surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,.15);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+}

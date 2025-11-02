@@ -1,32 +1,52 @@
 import { useState } from "react";
-
+import { motion, AnimatePresence } from "framer-motion";
+const navLinks = [
+  { href: "#home", label: "Home" },
+  { href: "#about", label: "About" },
+  { href: "#quote", label: "Quotes" },
+  { href: "#contacts", label: "Contacts" },
+];
 export default function Nav() {
   const [open, setOpen] = useState(false);
-
   return (
-    <div className="nav-body">
-      <div className="site">
-        <header>
-          <h1><a href="#home">Denis</a></h1>
-
-          <button
-            className="menu-button"
-            aria-expanded={open}
-            onClick={() => setOpen(v => !v)}
-          >
-            Menu
-          </button>
-
-          <nav className={`main-nav ${open ? "open" : ""}`} aria-hidden={!open}>
-            <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#quote">Quotes</a></li>
-              <li><a href="#contacts">Contacts</a></li>
-            </ul>
-          </nav>
-        </header>
+    <motion.header
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      className="fixed top-0 left-0 right-0 z-50 glass"
+    >
+      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="#home" className="text-xl font-bold text-[var(--c-text)]">Denis</a>
+        <button onClick={() => setOpen(!open)} className="md:hidden p-2">
+          <div className="w-6 h-0.5 bg-current mb-1" />
+          <div className="w-6 h-0.5 bg-current mb-1" />
+          <div className="w-6 h-0.5 bg-current" />
+        </button>
+        <nav className="hidden md:flex gap-4">
+          {navLinks.map(l => (
+            <a key={l.href} href={l.href} className="px-3 py-2 rounded-lg hover:bg-indigo-500/10 transition">
+              {l.label}
+            </a>
+          ))}
+        </nav>
       </div>
-    </div>
+
+      <AnimatePresence>
+        {open && (
+          <motion.nav
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className="md:hidden overflow-hidden"
+          >
+            {navLinks.map(l => (
+              <a key={l.href} href={l.href} onClick={() => setOpen(false)}
+                 className="block px-6 py-3 border-t border-white/10 hover:bg-indigo-500/10">
+                {l.label}
+              </a>
+            ))}
+          </motion.nav>
+        )}
+      </AnimatePresence>
+    </motion.header>
   );
 }

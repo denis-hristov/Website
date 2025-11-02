@@ -1,39 +1,57 @@
-import { motion } from "framer-motion";
-import Section from "../ui/Section";
+import { useEffect, useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import AnimateIn from "../ui/AnimateIn";
 
+const metrics = [
+  { label: "Projects", value: 18 },
+  { label: "Repos", value: 12 },
+  { label: "Clients Helped", value: 9 },
+  { label: "Daily Quotes", value: 660 },
+];
+
+function CountUp({ to }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-40px" });
+  useEffect(() => {
+    if (!inView) return;
+    let start = 0;
+    const end = to;
+    if (start === end) return;
+    const duration = 1200;
+    const increment = end / (duration / 16);
+    const timer = setInterval(() => {
+      start += increment;
+      if (start >= end) {
+        start = end;
+        clearInterval(timer);
+      }
+      ref.current.textContent = Math.round(start);
+    }, 16);
+  }, [inView, to]);
+  return <span ref={ref}>0</span>;
+}
 
 export default function Metrics() {
-	const metrics = [
-		{ label: "Projects", value: 18 },
-		{ label: "Repos", value: 12 },
-		{ label: "Clients Helped", value: 9 },
-		{ label: "Daily Quotes", value: 660 }
-	];
-
-
-	return (
-		<Section id="metrics" className="bg-neutral-50/60 dark:bg-neutral-900/40">
-			<div className="mx-auto max-w-6xl">
-				<h2 className="text-3xl sm:text-5xl font-extrabold">Numbers that grow</h2>
-				<p className="mt-3 text-neutral-600 dark:text-neutral-300 max-w-2xl">Animated, legible figures that reinforce credibility without shouting.</p>
-				<div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-6">
-					{metrics.map((m, i) => (
-						<motion.div
-							key={m.label}
-							initial={{ opacity: 0, y: 20 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true, amount: 0.6 }}
-							transition={{ delay: i * 0.05 }}
-							className="rounded-2xl border border-black/10 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur p-6 text-center shadow-sm"
-						>
-							<motion.div initial={{ scale: 0.9 }} whileInView={{ scale: 1 }} transition={{ type: "spring", stiffness: 140, damping: 14 }} className="text-4xl sm:text-5xl font-extrabold">
-								{m.value}
-							</motion.div>
-							<div className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">{m.label}</div>
-						</motion.div>
-					))}
-				</div>
-			</div>
-		</Section>
-	);
+  return (
+    <section id="metrics" className="py-24 px-6 bg-neutral-50/60 dark:bg-neutral-900/40">
+      <div className="max-w-6xl mx-auto">
+        <AnimateIn>
+          <h2 className="text-4xl md:text-5xl font-extrabold">Numbers that grow</h2>
+          <p className="mt-3 max-w-2xl text-neutral-600 dark:text-neutral-300">Animated, legible figures that reinforce credibility without shouting.</p>
+        </AnimateIn>
+        <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6">
+          {metrics.map((m,i) => (
+            <AnimateIn key={m.label} delay={i*0.05}>
+              <div className="glass p-6 text-center">
+                <div className="text-4xl md:text-5xl font-extrabold text-indigo-500">
+                  <CountUp to={m.value} />
+                </div>
+                <div className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">{m.label}</div>
+              </div>
+            </AnimateIn>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
