@@ -12,6 +12,8 @@ import Gallery from "./sections/Gallery";
 import ContactCTA from "./sections/ContactCTA";
 import ABOUT from "./sections/About";
 import QUOTE from "./sections/QuoteSection";
+import Services from "./sections/Services";
+import Work from "./sections/Work";
 
 
 export default function App() {
@@ -22,6 +24,8 @@ export default function App() {
 			<Nav />
 			<main>
 				<Hero />
+				<Services />
+        <Work />
 				<ABOUT />
 				<Features />
 				<QUOTE />

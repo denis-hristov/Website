@@ -39,8 +39,8 @@ export default function Footer() {
               target="_blank"
               rel="noopener"
               className="inline-flex h-9 w-9 items-center justify-center rounded-full border bg-white hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
-              aria-label="Имейл"
-              title="Имейл"
+              aria-label="Emale"
+              title="Emale"
             >
               <Mail className="h-4 w-4" />
             </a>

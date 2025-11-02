@@ -18,7 +18,7 @@ export default function Features() {
           {cards.map((c,i) => (
             <AnimateIn key={i} delay={i*0.1}>
 
-              <div
+              <motion.div
 
                 whileHover={{ rotateX: -6, rotateY: 6, scale: 1.03 }}
                 style={{ transformStyle: "preserve-3d" }}
@@ -30,7 +30,7 @@ export default function Features() {
                 <h3 className="text-lg font-semibold text-[var(--c-text)]">{c.title}</h3>
                 <p className="text-sm text-neutral-600 dark:text-neutral-300">{c.body}</p>
               
-              </div>
+              </motion.div>
               
             </AnimateIn>
           ))}

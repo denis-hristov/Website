@@ -10,7 +10,7 @@ const blocks = [
 ];
 export default function About() {
   return (
-    <section id="about" className="py-24 px-6 bg-neutral-50 dark:bg-neutral-900">
+    <section id="about" className="section py-24 px-6 bg-neutral-50 dark:bg-neutral-900">
       <div className="max-w-6xl mx-auto grid gap-16">
         {blocks.map((b,i) => (
           <AnimateIn key={i} delay={i*0.1}>
