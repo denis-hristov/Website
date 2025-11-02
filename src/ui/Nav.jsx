@@ -19,10 +19,10 @@ export default function Nav() {
 
           <nav className={`main-nav ${open ? "open" : ""}`} aria-hidden={!open}>
             <ul>
-              <li><a href="#home">Начало</a></li>
-              <li><a href="#about">За мен</a></li>
-              <li><a href="#contacts">Контакти</a></li>
-              <li><a href="#quote">Цитати</a></li>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#quote">Quotes</a></li>
+              <li><a href="#contacts">Contacts</a></li>
             </ul>
           </nav>
         </header>

@@ -1,6 +1,7 @@
 import ScrollProgressBar from "./ui/ScrollProgressBar";
 import Nav from "./ui/Nav";
 import Footer from "./ui/Footer";
+import ScrollToTopButton from "./ui/ScrollToTopButton.jsx";
 
 
 import Hero from "./sections/Hero";
@@ -16,6 +17,7 @@ import QUOTE from "./sections/QuoteSection";
 export default function App() {
 	return (
 		<div className="relative text-neutral-900 dark:text-neutral-100 bg-white dark:bg-neutral-950 selection:bg-indigo-200/60 dark:selection:bg-indigo-700/30">
+			<div id="top" />
 			<ScrollProgressBar />
 			<Nav />
 			<main>
@@ -28,6 +30,7 @@ export default function App() {
 				<Gallery />
 				<ContactCTA />
 			</main>
+			<ScrollToTopButton threshold={240} to="top" />
 			<Footer />
 		</div>
 	);

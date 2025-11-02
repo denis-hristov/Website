@@ -1,22 +1,29 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/resurses/ProfilPhoto.jpg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Website</title>
-    <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-  integrity="sha512-SOMEHASH"
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-/>
 
-    <link rel="manifest" href="/manifest.webmanifest" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/resurses/ProfilPhoto.jpg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SOMEHASH" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- За Android/Chromium -->
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <!-- По желание остави Apple таговете за iOS Safari (няма да пречат) -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- Добре е да имаш и theme-color -->
+  <meta name="theme-color" content="#0ea5e9">
+
+  <link rel="manifest" href="/manifest.webmanifest" />
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>
