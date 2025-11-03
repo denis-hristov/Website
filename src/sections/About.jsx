@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import AnimateIn from "../ui/AnimateIn";
 const blocks = [
-  { title: "Why I Do What I Do", img: "/resurses/Aspire 1.jpg", text: ["I’m driven by a deep desire to contribute to society through innovation and impact...","With experience across multiple domains..."] },
-  { title: "My 5-Year Vision", img: "/resurses/Aspire 2.jpg", text: ["My biggest goal is to build a sustainable and impactful business...","Surrounding myself with inspiring individuals..."], reverse:true },
-  { title: "The Business I’m Building", img: "/resurses/Aspire 3.jpg", text: ["I’m building a company that empowers people...","My website already features a prototype of a quote generator..."], button:"Try the Quote Generator", href:"/quoteGenerator" },
-  { title: "Giving Back Matters", img: "/resurses/Aspire 4.jpg", text: ["I've participated in charitable sales...","Through these initiatives..."], reverse:true },
-  { title: "Moments That Shaped Me", img: "/resurses/Aspire 5.jpg", text: ["One moment that deeply impacted me...","Another milestone is my YouTube channel..."] },
-  { title: "The Turning Point", img: "/resurses/Aspire 6.jpg", text: ["Everything changed in 10th grade...","That decision built my discipline..."], reverse:true },
+  { title: "Why I Do What I Do", img: "/resurses/Aspire 1.jpg", text: ["I enjoy turning ideas into useful, minimal products.","My background blends design, coding, and systems thinking to make things clear and practical."] },
+  { title: "My 5-Year Vision", img: "/resurses/Aspire 2.jpg", text: ["Shipping polished React front‑ends with Vite, Tailwind and Framer Motion.","Building a productivity website with quotes and micro‑habits, and small tools for clients."], reverse:true },
+  { title: "The Business I’m Building", img: "/resurses/Aspire 3.jpg", text: ["Personal Website (PWA, scroll animations).", "Client Portal (data filtering + charts).", "Scheduler App (tasks & teams).",], button:"Try the Quote Generator", href:"/quoteGenerator" },
+  { title: "Giving Back Matters", img: "/resurses/Aspire 4.jpg", text: ["I share progress on YouTube, Threads and LinkedIn — building in public and documenting lessons."], reverse:true },
+  { title: "Moments That Shaped Me", img: "/resurses/Aspire 5.jpg", text: ["Grow a small product studio, then scale one winner.", "Work with a tight team, ship fast, and support causes I care about."] },
+  { title: "The Turning Point", img: "/resurses/Aspire 6.jpg", text: ["Clarity over noise. Useful over flashy. Consistency over motivation."], reverse:true },
 ];
 export default function About() {
   return (
