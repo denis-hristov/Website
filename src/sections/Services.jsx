@@ -3,9 +3,9 @@ import Section from "../ui/Section";
 
 export default function Services() {
   const items = [
-    { t: "Web Design", s: "Clean UI, ясна йерархия и плавни анимации." },
-    { t: "React Dev", s: "Vite, Tailwind, Framer Motion – бързо и елегантно." },
-    { t: "Brand Kit", s: "Лого, цветове, компоненти, tone of voice." },
+    { t: "Web Design", s: "Clean UI, clear hierarchy and smooth motion." },
+    { t: "React Dev", s: "Vite, Tailwind, Framer Motion - fast, maintainable front-ends." },
+    { t: "Brand Kit", s: "Logo, colors, components, and tone of voice." },
   ];
   return (
     <Section id="services" className="bg-neutral-50/60 dark:bg-neutral-900/40">

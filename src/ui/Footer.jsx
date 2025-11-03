@@ -1,4 +1,3 @@
-// ui/Footer.jsx
 import { Mail, Github, Instagram, ArrowUpRight } from "lucide-react";
 
 const NAV = [

@@ -8,9 +8,9 @@ export default function Hero() {
       <AnimateIn>
         <div className="glass max-w-4xl mx-auto grid md:grid-cols-2 items-center gap-8 p-8 md:p-12">
           <div className="flex flex-col gap-4">
-            <span className="text-sm uppercase tracking-widest text-indigo-500">Welcome</span>
+            <br/>
             <h1 className="text-4xl md:text-5xl font-extrabold text-[var(--c-text)]">
-              <u style={{ color: 'red' }}>Work in progress!</u> Don't wait for the perfect moment. <span className="text-indigo-500">Make it.</span>
+              Don't wait for the perfect moment. <span className="text-indigo-500">Make it.</span>
             </h1>
             <p className="text-lg text-neutral-600 dark:text-neutral-300">Denis Hristov</p>
           </div>

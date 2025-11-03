@@ -7,7 +7,7 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: "autoUpdate",
-      devOptions: { enabled: true }, // важно за dev да няма 404
+      devOptions: { enabled: true },
       manifest: {
         name: "Denis Website",
         short_name: "Denis",

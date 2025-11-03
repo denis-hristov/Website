@@ -57,9 +57,9 @@ export default function ScrollToTopButton({
     <button
       type="button"
       onClick={jump}
-      aria-label="Върни се нагоре"
-      title="Върни се нагоре"
-      style={{ bottom: `${bottom}px` }}        // <-- динамичен отстъп
+      aria-label="Up"
+      title="Up"
+      style={{ bottom: `${bottom}px` }}
       className={`fixed right-5 z-[120] inline-flex h-11 w-11 items-center justify-center
                   rounded-full border border-neutral-200 dark:border-white/10
                   bg-white/90 dark:bg-neutral-800/70 backdrop-blur

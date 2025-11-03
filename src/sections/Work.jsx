@@ -3,9 +3,12 @@ import Section from "../ui/Section";
 
 export default function Work() {
   const projects = [
-    { t: "Personal Website", s: "Едностраничен сайт с анимации и PWA." },
-    { t: "Client Portal",   s: "Филтриране на данни и графики (React)." },
-    { t: "Scheduler App",   s: "Управление на задачи/служители." },
+  { t: "Personal Website", s: "One-page site with scroll animations and PWA.", 
+    live: "https://denis-hristov-website.web.app/", code: "https://github.com/denis-hristov/Website" },
+  { t: "Client Portal", s: "Data filtering and charts (React).", 
+    code: "https://github.com/denis-hristov/Project-Client-Portal" },
+  { t: "Scheduler App", s: "Employees, tasks and daily planning.", 
+    code: "https://github.com/denis-hristov/Scheduler-employees-work" },
   ];
   return (
     <Section id="work">

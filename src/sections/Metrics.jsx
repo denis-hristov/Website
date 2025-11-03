@@ -3,10 +3,10 @@ import { motion, useInView } from "framer-motion";
 import AnimateIn from "../ui/AnimateIn";
 
 const metrics = [
-  { label: "Projects", value: 18 },
-  { label: "Repos", value: 12 },
-  { label: "Clients Helped", value: 9 },
-  { label: "Daily Quotes", value: 660 },
+  { label: "Projects shipped", value: 3 },
+  { label: "Open-source repos", value: 6 },
+  { label: "YouTube subscribers", value: 800 },
+  { label: "Daily quotes generated", value: 600 },
 ];
 
 function CountUp({ to }) {

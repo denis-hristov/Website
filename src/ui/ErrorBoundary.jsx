@@ -4,7 +4,7 @@ export default class ErrorBoundary extends React.Component {
   static getDerivedStateFromError(){ return { hasError:true }; }
   componentDidCatch(err, info){ console.error(err, info); }
   render(){
-    if (this.state.hasError) return <div style={{padding:16}}>Нещо се обърка. Релоудни страницата.</div>;
+    if (this.state.hasError) return <div style={{padding:16}}>Something went wrong. Please reload the page.</div>;
     return this.props.children;
   }
 }

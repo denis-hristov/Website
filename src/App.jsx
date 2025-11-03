@@ -24,13 +24,13 @@ export default function App() {
 			<Nav />
 			<main>
 				<Hero />
-				<Services />
-        <Work />
 				<ABOUT />
+				<Services />
+        		<Work />
 				<Features />
-				<QUOTE />
 				<StickyShowcase />
 				<Metrics />
+				<QUOTE />
 				<Gallery />
 				<ContactCTA />
 			</main>
