@@ -5,14 +5,14 @@ import ScrollToTopButton from "./ui/ScrollToTopButton.jsx";
 
 
 import Hero from "./sections/Hero";
-import Features from "./sections/Features";
+import Skilles from "./sections/Skilles.jsx";
 import StickyShowcase from "./sections/StickyShowcase";
 import Metrics from "./sections/Metrics";
 import Gallery from "./sections/Gallery";
 import ContactCTA from "./sections/ContactCTA";
 import ABOUT from "./sections/About";
 import QUOTE from "./sections/QuoteSection";
-import Services from "./sections/Services";
+import Content from "./sections/Content.jsx";
 import Work from "./sections/Work";
 
 
@@ -25,9 +25,9 @@ export default function App() {
 			<main>
 				<Hero />
 				<ABOUT />
-				<Services />
+				<Content />
         		<Work />
-				<Features />
+				<Skilles />
 				<StickyShowcase />
 				<Metrics />
 				<QUOTE />
