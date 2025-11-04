@@ -2,22 +2,65 @@ import AnimateIn from "../ui/AnimateIn";
 import Section from "../ui/Section";
 
 export default function Services() {
-  const items = [
-    { t: "Web Design", s: "Clean UI, clear hierarchy and smooth motion." },
-    { t: "React Dev", s: "Vite, Tailwind, Framer Motion - fast, maintainable front-ends." },
-    { t: "Brand Kit", s: "Logo, colors, components, and tone of voice." },
+  // Статично вградени последни постове от Threads (BG -> EN, без украси)
+  const posts = [
+    {
+      id: "p2",
+      user: "denis_hristov",
+      time: "1d",
+      en: "Don't wait for the perfect moment; it doesn't exist. When you stop waiting and searching for it, every moment will be ideal."
+    },
+    {
+      id: "p3",
+      user: "denis_hristov",
+      time: "2d",
+      en: "The body can handle it, but the mind convinces you otherwise. Act without planning every detail. The plan will change along the way anyway."
+    },
+    {
+      id: "p4",
+      user: "denis_hristov",
+      time: "3d",
+      en: "If the task seems impossible, you just haven't come up with the right way to execute it. Come up with an unusual solution to the problem."
+    },
+    {
+      id: "p5",
+      user: "denis_hristov",
+      time: "4d",
+      en: "First fix your mind with books, walks, and sport; then the world around you will become the way you have always wanted it."
+    },
+    {
+      id: "p6",
+      user: "denis_hristov",
+      time: "5d",
+      en: "Progress is boring. Working on the same thing every day without seeing an instant result. The one who learns to love being broken wins."
+    },
+    {
+      id: "p7",
+      user: "denis_hristov",
+      time: "6d",
+      en: "Work until it becomes normal for you to win. Then the real work begins."
+    }
   ];
+
   return (
     <Section id="services" className="bg-neutral-50/60 dark:bg-neutral-900/40">
       <div className="max-w-6xl mx-auto">
-        <AnimateIn><h2 className="text-4xl md:text-5xl font-extrabold">Services</h2></AnimateIn>
+        <AnimateIn>
+          <h2 className="text-4xl md:text-5xl font-extrabold">Threads - latest posts</h2>
+        </AnimateIn>
+
         <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {items.map((c, i) => (
-            <AnimateIn key={c.t} delay={i * 0.05}>
-              <div className="glass p-6 rounded-2xl">
-                <h3 className="text-lg font-semibold">{c.t}</h3>
-                <p className="mt-2 text-neutral-600 dark:text-neutral-300">{c.s}</p>
-              </div>
+          {posts.map((p, i) => (
+            <AnimateIn key={p.id} delay={i * 0.05}>
+              <article className="glass p-6 rounded-2xl">
+                <header className="mb-3 flex items-center justify-between text-sm text-neutral-500">
+                  <span>@{p.user}</span>
+                  <time>{p.time}</time>
+                </header>
+                <p className="whitespace-pre-wrap text-neutral-900 dark:text-neutral-100">
+                  {p.en}
+                </p>
+              </article>
             </AnimateIn>
           ))}
         </div>
