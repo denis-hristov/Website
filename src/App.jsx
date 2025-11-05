@@ -24,14 +24,14 @@ export default function App() {
 			<Nav />
 			<main>
 				<Hero />
+				<Metrics />
 				<ABOUT />
-				<Content />
         		<Work />
 				<Skilles />
-				<StickyShowcase />
-				<Metrics />
 				<QUOTE />
-				<Gallery />
+				<StickyShowcase />
+				<Content />
+				{/* <Gallery /> */}
 				<ContactCTA />
 			</main>
 			<ScrollToTopButton threshold={240} to="top" />

@@ -4,7 +4,8 @@ const links = [
   { href: "https://www.threads.net/@denis_hristov/", label: "Threads", icon: "fa-brands fa-threads" },
   { href: "https://www.linkedin.com/in/denis-hristov-profile/", label: "LinkedIn", icon: "fa-brands fa-linkedin-in" },
   { href: "https://www.youtube.com/@denis_hristov", label: "YouTube", icon: "fa-brands fa-youtube" },
-  { href: "https://x.com/denis_hristov45?s=21", label: "Twitter", icon: "fa-brands fa-x-twitter" },
+  { href: "https://www.tiktok.com/@denis_hristov", label: "TikTok", icon: "fa-brands fa-tiktok" },
+  // { href: "https://x.com/denis_hristov45?s=21", label: "Twitter", icon: "fa-brands fa-x-twitter" },
   { href: "https://github.com/denis-hristov", label: "GitHub", icon: "fa-brands fa-github" },
 ];
 export default function ContactCTA() {

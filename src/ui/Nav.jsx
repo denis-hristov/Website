@@ -5,9 +5,10 @@ import { scrollToId } from "./scrollTo";
 const navLinks = [
   { href: "#home",     label: "Home" },
   { href: "#about",    label: "About" },
-  { href: "#services", label: "Service" },
   { href: "#work",     label: "Work" },
+  { href: "#skills",    label: "Skills" },
   { href: "#quote",    label: "Quotes" },
+  { href: "#content", label: "Content" },
   { href: "#contacts", label: "Contacts" },
 ];
 

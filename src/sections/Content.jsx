@@ -43,7 +43,7 @@ export default function Services() {
   ];
 
   return (
-    <Section id="services" className="bg-neutral-50/60 dark:bg-neutral-900/40">
+    <Section id="content" className="bg-neutral-50/60 dark:bg-neutral-900/40">
       <div className="max-w-6xl mx-auto">
         <AnimateIn>
           <h2 className="text-4xl md:text-5xl font-extrabold">Threads - latest posts</h2>

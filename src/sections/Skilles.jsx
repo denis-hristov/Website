@@ -1,17 +1,39 @@
 import { motion } from "framer-motion";
 import AnimateIn from "../ui/AnimateIn";
-import { Code2, Braces, Palette, Cpu, Database, GitBranch, Cloud, Rocket } from "lucide-react";
+import {
+  Code2, Palette, Braces, Cpu, Database, GitBranch, Cloud, Rocket, Bug,
+  Languages, Clock, Lightbulb, Video, Camera, Megaphone, TrendingUp, Users, Handshake, BookOpen, Dumbbell,
+  Globe2, Activity, UserRoundCheck
+} from "lucide-react";
 
-const skills = [
-  { icon: <Code2 className="w-7 h-7" />, title: "React & Vite", body: "SPAs with hooks, context, routing, and code-splitting.", level: 85, tags: ["React","Vite","JSX"] },
-  { icon: <Palette className="w-7 h-7" />, title: "Tailwind CSS", body: "Utility-first UI, responsive layouts, and dark mode.", level: 85, tags: ["Tailwind","Responsive"] },
-  { icon: <Braces className="w-7 h-7" />, title: "JavaScript", body: "ES modules, async/await, and best practices.", level: 80, tags: ["JS","ESNext"] },
-  { icon: <Cpu className="w-7 h-7" />, title: "Framer Motion", body: "Enter/exit animations and scroll-based transforms.", level: 75, tags: ["Motion","UX"] },
-  { icon: <Database className="w-7 h-7" />, title: "Firebase", body: "Auth, Firestore, Hosting, and Functions.", level: 70, tags: ["Firebase","Serverless"] },
-  { icon: <GitBranch className="w-7 h-7" />, title: "Git & GitHub", body: "Branching, PRs, code reviews, and CI basics.", level: 75, tags: ["Git","GitHub"] },
-  { icon: <Cloud className="w-7 h-7" />, title: "PWA", body: "Service workers, manifest, and offline basics.", level: 65, tags: ["PWA"] },
-  { icon: <Rocket className="w-7 h-7" />, title: "Product & UX", body: "Clear user flows, copywriting, and MVP thinking.", level: 70, tags: ["UX","MVP"] },
+
+
+export const skills = [
+  { icon: <Code2 className="w-7 h-7" />, title: "React & Vite", body: "Single-page apps with hooks, context, routing, code-splitting.", level: 85, tags: ["React","Vite", "JS","HTML", "CSS"] },
+  { icon: <Braces className="w-7 h-7" />, title: "Python", body: "Analises, scripting and data manigment.", level: 80, tags: ["Python","XML","Excel"] },
+  { icon: <Rocket className="w-7 h-7" />, title: "Product & Entrepreneurship", body: "MVP thinking, clear user flows, value-driven mindset.", level: 70, tags: ["Product","UX","MVP"] },
+  { icon: <Video className="w-7 h-7" />, title: "Video & Editing", body: "Storytelling, framing, editing; motivational videos.", level: 90, tags: ["Content","Video", "Editing"] },
+  { icon: <Code2 className="w-7 h-7" />, title: "C++", body: "OOP, STL, memory management; built a Minesweeper clone.", level: 80, tags: ["C++","STL","OOP"] },
+  { icon: <Megaphone className="w-7 h-7" />, title: "Marketing", body: "Social media, positioning, short-form copy.", level: 75, tags: ["Marketing","Branding"] },
+  { icon: <Camera className="w-7 h-7" />, title: "Photography & Content Design", body: "Photo editing, visual aesthetics, brand stories.", level: 75, tags: ["Photo", "PhotoShop", "Design"] },
+  { icon: <Code2 className="w-7 h-7" />, title: "QA & Testing", body: "Manual testing, debugging, clean code practices.", level: 50, tags: ["QA","Testing"] },
+  { icon: <Clock className="w-7 h-7" />, title: "Time Management", body: "Prioritization, planning, daily checklists.", level: 90, tags: ["Productivity","Planning"] },
+  { icon: <BookOpen className="w-7 h-7" />, title: "Habits & Personal Growth", body: "Daily practices, consistency, 660+ curated tips.", level: 85, tags: ["Habits","Growth"] },
+  { icon: <Dumbbell className="w-7 h-7" />, title: "Fitness & Discipline", body: "Workout planning, consistency, mental toughness.", level: 80, tags: ["Fitness","Discipline"] },
+  { icon: <Languages className="w-7 h-7" />, title: "Languages", body: "Bulgarian (native), English B2, German A1, Italian beginner.", level: 70, tags: ["BG", "EN", "DE", "IT"] },
+  
+  // { icon: <Palette className="w-7 h-7" />, title: "Tailwind CSS", body: "Utility-first UI, responsive layouts, dark mode.", level: 85, tags: ["Tailwind","Responsive"] },
+  // { icon: <Cloud className="w-7 h-7" />, title: "Firebase", body: "Auth, Firestore, Hosting; deployed personal portfolio.", level: 70, tags: ["Firebase","Serverless"] },
+  // { icon: <Cpu className="w-7 h-7" />, title: "Framer Motion", body: "Enter/exit animations and scroll-based effects.", level: 75, tags: ["Motion","UX"] },
+  // { icon: <Database className="w-7 h-7" />, title: "MySQL & Databases", body: "Schema design, CRUD, basic queries and joins.", level: 40, tags: ["MySQL","SQL"] },
+  // { icon: <GitBranch className="w-7 h-7" />, title: "Git & GitHub", body: "Branching, PRs, code reviews, CI basics.", level: 75, tags: ["Git","GitHub"] },
+  
+  // { icon: <Lightbulb className="w-7 h-7" />, title: "Entrepreneurship", body: "Idea → MVP → validation → monetization.", level: 75, tags: ["Business","Startup"] },
+  // { icon: <TrendingUp className="w-7 h-7" />, title: "Financial Literacy", body: "Budgeting, basic investing, ROI mindset.", level: 70, tags: ["Finance"] },
+  // { icon: <Users className="w-7 h-7" />, title: "Teamwork & Leadership", body: "Small-team coordination and ownership.", level: 75, tags: ["Teamwork","Leadership"] },
+  // { icon: <Handshake className="w-7 h-7" />, title: "Community & Volunteering", body: "Campaigns for kids/elderly; empathy and responsibility.", level: 85, tags: ["Community","Volunteering"] },
 ];
+
 
 export default function Skills() {
   return (
@@ -20,7 +42,7 @@ export default function Skills() {
         <AnimateIn>
           <h2 className="text-4xl md:text-5xl font-extrabold">Skills</h2>
           <p className="mt-3 max-w-2xl text-neutral-600 dark:text-neutral-300">
-            Practical stack for fast, polished web apps.
+            Keep improving, skills are the best investment you can make.
           </p>
         </AnimateIn>
 
