@@ -7,35 +7,35 @@ export default function Work() {
       t: "Gym App",
       s: "Track your workouts, calories, and share with friends.",
       live: "https://denis-fitplanner-pro.web.app/",
-      img: "/assets/work/gym-app.jpg",
+      img: "/public/resurses/logoGymApp.png",
       imgAlt: "Gym App preview"
     },
     {
       t: "Personal Archetype Quiz",
       s: "Understand yourself better and get personalized advice for improvement.",
       live: "https://personal-archetype.web.app/",
-      img: "/assets/work/personal-archetype.jpg",
+      img: "/public/resurses/PA-logo.svg",
       imgAlt: "Personal Archetype Quiz preview"
     },
     {
       t: "Employees Scheduler",
       s: "Manage your team and easily allocate tasks to each person.",
       live: "https://github.com/denis-hristov/Scheduler-employees-work",
-      img: "/assets/work/employees-scheduler.jpg",
+      img: "/public/resurses/LogoEmployeesScheduler.png",
       imgAlt: "Employees Scheduler preview"
     },
     {
       t: "Business Template Website (in progress)",
       s: "An easy-to-adapt website template for any business.",
       live: "",
-      img: "/assets/work/business-template.jpg",
+      img: "/public/resurses/BTW.png",
       imgAlt: "Business Template Website preview"
     },
     {
       t: "RenderGPT",
       s: "Demo startup for generating 3D apartment tours with interior design.",
       live: "https://render-gpt.lovable.app/",
-      img: "/assets/work/render-gpt.jpg",
+      img: "/public/resurses/Logo renderGTP.png",
       imgAlt: "RenderGPT preview"
     },
   ];

@@ -45,7 +45,7 @@ export default function StickyShowcase() {
             >
               <div className="absolute inset-0 bg-gradient-to-br from-indigo-100 via-white to-emerald-50 dark:from-indigo-950 dark:via-neutral-900 dark:to-emerald-950" />
               <motion.img
-                src="/resurses/ProfilPhoto.jpg"
+                src="/resurses/IMG_1150.jpg"
                 alt="Growth steps visual"
                 className="absolute inset-0 h-full w-full object-cover object-center"
                 style={{ filter }}
