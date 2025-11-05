@@ -5,7 +5,7 @@ const blocks = [
   { title: "My 5-Year Vision", img: "/resurses/IMG_0254.JPG", text: ["I strive to keep growing and to inspire the people around me to do the same. I believe motivation and ambition are key to success, yet they’re often missing in the younger generation.","That’s why I want to lead by example and show that with the right knowledge, consistency, and effort, anything is possible."], reverse:true },
   { title: "The Business I’m Building", img: "/resurses/Aspire 2.jpg", text: ["Motivational content to help you make progress and keep going.", "Personal Archetype Questionnaire. Understand yourself and get personalized advice to improve.", "Gym app to track workouts, calories, and body stats.",], button:"Check my work", href:"#work" },
   { title: "Giving Back Matters", img: "/resurses/IMG_8121.jpg", text: ["I share progress on YouTube, Threads and LinkedIn, building in public and documenting lessons."], reverse:true },
-  { title: "Moments That Shaped Me", img: "/resurses/Aspire 5.jpg", text: ["Books are one of the best sources of knowledge. They can change lives.", "Grow a small product studio, then scale one winner."] },
+  { title: "Moments That Shaped Me", img: "/resurses/image1 (5).jpeg", text: ["Books are one of the best sources of knowledge. They can change lives.", "Grow a small product studio, then scale one winner."] },
   { title: "The Turning Point", img: "/resurses/IMG_5401.jpg", text: ["Clarity over noise. Useful over flashy. Consistency over motivation."], reverse:true },
 ];
 export default function About() {
