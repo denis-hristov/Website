@@ -1,33 +1,50 @@
-import { color, motion } from "framer-motion";
-import AnimateIn from "../ui/AnimateIn";
-export default function Hero() {
-  return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-indigo-50 via-white to-emerald-50
-                      dark:from-indigo-950 dark:via-neutral-900 dark:to-emerald-950" />
-      <AnimateIn>
-        <div className="glass max-w-4xl mx-auto grid md:grid-cols-2 items-center gap-8 p-8 md:p-12">
-          <div className="flex flex-col gap-4">
-            <br/>
-            <h1 className="text-4xl md:text-5xl font-extrabold text-[var(--c-text)]">
-              Don't wait for the perfect moment. <span className="text-indigo-500">Make it.</span>
-            </h1>
-            <p className="text-lg text-neutral-600 dark:text-neutral-300">Denis Hristov</p>
-          </div>
-          <motion.div
-            whileHover={{ scale: 1.05, rotateY: 8 }}
-            style={{ perspective: 1000 }}
-            className="relative"
-          >
-            <img
-              src="/resurses/ProfilPhoto.jpg"
-              alt="Denis"
-              className="rounded-3xl shadow-2xl w-full h-auto"
-            />
-            <div className="absolute -inset-2 rounded-3xl bg-gradient-to-br from-indigo-400 to-emerald-400 opacity-30 blur-2xl -z-10" />
-          </motion.div>
-        </div>
-      </AnimateIn>
-    </section>
-  );
+import { ArrowDown, ArrowUpRight, Braces, Mail, Rocket } from 'lucide-react';
+import useTimedCycle from '../hooks/useTimedCycle';
+import { ASSET_PATH, EMAIL } from '../data/siteData';
+
+export default function Hero({ go, t }) {
+  const word = useTimedCycle(t.hero.words.length, 2400);
+  const status = useTimedCycle(t.hero.states.length, 3000);
+  const orbitPhase = useTimedCycle(2, 7000);
+  return <section className="hero" id="home">
+    <div className="hero-copy">
+      <h1>{t.hero.titleStart} <span className="rotating-word" key={t.hero.words[word]}> {t.hero.words[word]}</span>
+        <br />
+        <em>{t.hero.titleEnd}</em>
+      </h1>
+      <p>{t.hero.text}</p>
+      <div className="hero-actions">
+        <a href={`mailto:${EMAIL}?subject=${encodeURIComponent(t.subject)}`}>
+          <Mail />{t.hero.primary}
+          <ArrowUpRight />
+        </a>
+        <button onClick={() => go('work')}>{t.hero.secondary}
+          <ArrowDown />
+        </button>
+      </div>
+    </div>
+    <div className={`hero-art orbit-phase-${orbitPhase}`}>
+      <img className="hologram-screen" src="/design_img/code_screen.png" alt="" />
+      <div className="orbit orbit-a" />
+      <div className="orbit orbit-b" />
+      <div className="code-card">
+        <span>{t.hero.status}</span>
+        <b className="status-value" key={t.hero.states[status]}>
+          <i />{t.hero.states[status]}
+          <span className="terminal-cursor" />
+        </b>
+        <small>{t.hero.stack}</small>
+      </div>
+      <div className="portrait">
+        <img src={ASSET_PATH + 'IMG_8514.JPG'} alt="Denis Hristov" />
+        <span>{t.hero.role}</span>
+      </div>
+      <div className="floating-tag tag-one">
+        <Braces /> {t.hero.clean}
+      </div>
+      <div className="floating-tag tag-two">
+        <Rocket /> {t.hero.ship}
+      </div>
+    </div>
+  </section>;
 }
